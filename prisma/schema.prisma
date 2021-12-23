@@ -1,0 +1,34 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Character {
+  id Int @id @default(autoincrement())
+  name String @unique
+  level Int
+  gathering Int
+  fishing Int
+  hunting Int
+  cooking Int
+  alchemy Int
+  processing Int
+  training Int
+  trade Int
+  farming Int
+  sailing Int
+  barter Int
+}
+
+model Item {
+  id String @id @default(cuid())
+  name String
+  mpprice Int
+}
